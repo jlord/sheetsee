@@ -1,3 +1,7 @@
+var ich = require('icanhaz')
+
+module.exports.ich = ich
+
 module.exports.getKeywordCount = function(data, keyword) {
   var group = []
   data.forEach(function (d) {
@@ -155,8 +159,4 @@ module.exports.makeArrayOfObject = function(data) {
     var h = {label: key, units: data[key]}
     return h
   })
-}
-
-module.exports.setup = function() {
-  $(document).on("click", ".tHeader", Sheetsee.sendToSort)
 }
