@@ -13,17 +13,16 @@ function makeBuildInstructions(modules, cb) {
   getWantedModules(modules, cb)
 }
 
-// write an err into this function
 function getWantedModules(modules, cb) {
   var npmModules = []
   var writeFile = false
-  if (modules === "") console.log("Please include modules -maps, -tables, -charts")
+  if (modules === "") console.log("Please include modules -maps/-m, -tables/-t or -charts/-c")
   modules.forEach(function whichModules(module) {
       if (module === "-m" || module === "-maps") return npmModules.push("sheetsee-maps") 
       if (module === "-t" || module === "-tables") return npmModules.push("sheetsee-tables") 
       if (module === "-c" || module === "-charts") return npmModules.push("sheetsee-charts")
       if (module === "--save") return writeFile = true
-      console.error( module + " doesn't exist, please use -maps, -tables or -charts")
+      console.error(module + " doesn't exist, please use -maps/-m, -tables/-t or -charts/-c")
   })
   cb(npmModules, writeFile)
 }
@@ -50,4 +49,4 @@ function runBuild(extendString, writeFile) {
   } else b.bundle().pipe(process.stdout)
   dataStream.queue(extendString)
   dataStream.queue(null)
-  }
+}
