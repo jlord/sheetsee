@@ -17,6 +17,9 @@
     "data"
   ],
   "dependencies": {
-    "icanhaz": "~0.10.3"
+    "icanhaz": "~0.10.3",
+    "lodash.assign": "~2.1.0",
+    "browserify": "~2.35.2",
+    "through": "~2.3.4"
   }
 }
