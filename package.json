@@ -1,8 +1,9 @@
 {
-  "name": "sheetsee-core",
+  "name": "sheetsee",
   "version": "0.0.0",
   "description": "enables data manipulation functionality with sheetsee.js",
   "main": "index.js",
+  "bin": {"sheetsee": "bin.js"},
   "repository": {
     "type": "git",
     "url": "https://github.com/jlord/sheetsee-core.git"

@@ -1,4 +1,4 @@
-# sheetsee-core
+# sheetsee
 
 ![sheetsee](https://raw.github.com/jllord/sheetsee-cache/master/img/sheetsee-03.png)
 
