@@ -30,7 +30,7 @@ function getWantedModules(modules, cb) {
 function includeModules(npmModules, writeFile) {
   if (npmModules.length === 0) return console.error("Aborted build, no modules required")
   var extendString = "if (typeof Sheetsee === 'undefined') window.Sheetsee = {};"
-    + "var extend = require('lodash.assign'); extend(Sheetsee, "
+    + "extend(Sheetsee, "
   var counter = npmModules.length
   npmModules.forEach(function addModules(module) {
     counter--
@@ -42,6 +42,8 @@ function includeModules(npmModules, writeFile) {
 
 function runBuild(extendString, writeFile) {
   var dataStream = through()
+  var origDir = process.cwd()
+  process.chdir(__dirname)
   b = browserify()
   b.files.push(dataStream)
   if (writeFile) {
@@ -49,4 +51,5 @@ function runBuild(extendString, writeFile) {
   } else b.bundle().pipe(process.stdout)
   dataStream.queue(extendString)
   dataStream.queue(null)
+  process.chdir(origDir)
 }
