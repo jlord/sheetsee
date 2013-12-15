@@ -6,12 +6,12 @@
   "bin": {"sheetsee": "bin.js"},
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlord/sheetsee-core.git"
+    "url": "https://github.com/jlord/sheetsee.git"
   },
   "author": "Jessica Lord",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/jlord/sheetsee-core/issues"
+    "url": "https://github.com/jlord/sheetsee/issues"
   },
   "keywords": [
     "spreadsheet",
