@@ -1,7 +1,7 @@
 {
   "name": "sheetsee",
-  "version": "0.0.0",
-  "description": "enables data manipulation functionality with sheetsee.js",
+  "version": "0.0.1",
+  "description": "module for building out custom sheetsee.js instances",
   "main": "index.js",
   "bin": {
     "sheetsee": "bin.js"
@@ -19,24 +19,17 @@
   },
   "keywords": [
     "spreadsheet",
-    "data"
+    "data",
+    "google spreadsheet"
   ],
   "dependencies": {
     "icanhaz": "~0.10.3",
     "lodash.assign": "~2.1.0",
     "browserify": "~2.35.2",
     "through": "~2.3.4",
-    "sheetsee-tables": "0.0.0",
-    "sheetsee-maps": "0.0.0",
-    "sheetsee-charts": "0.0.0"
-  },
-  "readme": "Work in Progress!\n\nSee [github.com/jlord/sheetsee.js](github.com/jlord/sheetsee.js)\n",
-  "readmeFilename": "README.md",
-  "homepage": "https://github.com/jlord/sheetsee",
-  "_id": "sheetsee@0.0.0",
-  "dist": {
-    "shasum": "b9fa13c3f77dc59de14d44c35a3f38096bcf5f68"
-  },
-  "_from": "sheetsee@",
-  "_resolved": "https://registry.npmjs.org/sheetsee/-/sheetsee-0.0.0.tgz"
+    "sheetsee-tables": "~0.0.0",
+    "sheetsee-maps": "~0.0.0",
+    "sheetsee-charts": "~0.0.0",
+    "sheetsee-core": "~0.0.0"
+  }
 }
