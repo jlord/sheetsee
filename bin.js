@@ -18,8 +18,8 @@ function getWantedModules(modules, cb) {
   var writeFile = false
   if (modules === "") console.log("Please include modules -maps/-m, -tables/-t or -charts/-c")
   modules.forEach(function whichModules(module) {
-      if (module === "-m" || module === "-maps") return npmModules.push("sheetsee-maps") 
-      if (module === "-t" || module === "-tables") return npmModules.push("sheetsee-tables") 
+      if (module === "-m" || module === "-maps") return npmModules.push("sheetsee-maps")
+      if (module === "-t" || module === "-tables") return npmModules.push("sheetsee-tables")
       if (module === "-c" || module === "-charts") return npmModules.push("sheetsee-charts")
       if (module === "--save") return writeFile = true
       console.error(module + " doesn't exist, please use -maps/-m, -tables/-t or -charts/-c")
@@ -30,7 +30,7 @@ function getWantedModules(modules, cb) {
 function includeModules(npmModules, writeFile) {
   if (npmModules.length === 0) return console.error("Aborted build, no modules required")
   var extendString = "if (typeof Sheetsee === 'undefined') window.Sheetsee = {};"
-    + "extend(Sheetsee, "
+    + "extend(Sheetsee, require('sheetsee-core'), "
   var counter = npmModules.length
   npmModules.forEach(function addModules(module) {
     counter--
