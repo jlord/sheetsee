@@ -2,7 +2,6 @@
 
 var args = process.argv.slice(2)
 var modules = process.argv.slice(2)
-var extend = require('lodash.assign')
 var browserify = require('browserify')
 var through = require('through')
 var fs = require('fs')
@@ -29,13 +28,13 @@ function getWantedModules(modules, cb) {
 
 function includeModules(npmModules, writeFile) {
   if (npmModules.length === 0) return console.error("Aborted build, no modules required")
-  var extendString = "if (typeof Sheetsee === 'undefined') window.Sheetsee = {};"
-    + "extend(Sheetsee, require('sheetsee-core'), "
+  var extendString = "if (typeof window.Sheetsee === 'undefined') window.Sheetsee = {};"
+    + " window.Sheetsee = require('sheetsee-core'); var extend = require('lodash.assign'); extend(window.Sheetsee, "
   var counter = npmModules.length
   npmModules.forEach(function addModules(module) {
     counter--
     if (counter != 0) extendString = extendString + "require('" + module + "'), "
-    if (counter === 0) extendString = extendString + "require('" + module + "'))"
+    if (counter === 0) extendString = extendString + "require('" + module + "')); module.exports = Sheetsee;"
   })
   runBuild(extendString, writeFile)
 }
