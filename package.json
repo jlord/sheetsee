@@ -1,6 +1,6 @@
 {
   "name": "sheetsee",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "module for building out custom sheetsee.js instances",
   "main": "index.js",
   "bin": {
