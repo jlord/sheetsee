@@ -5,6 +5,7 @@ var modules = process.argv.slice(2)
 var browserify = require('browserify')
 var through = require('through')
 var fs = require('fs')
+var path = require('path')
 
 makeBuildInstructions(modules, includeModules)
 
@@ -46,7 +47,8 @@ function runBuild(extendString, writeFile) {
   b = browserify()
   b.files.push(dataStream)
   if (writeFile) {
-    b.bundle().pipe(fs.createWriteStream("sheetsee.js"))
+    var output = path.join(origDir, "sheetsee.js")
+    b.bundle().pipe(fs.createWriteStream(output))
   } else b.bundle().pipe(process.stdout)
   dataStream.queue(extendString)
   dataStream.queue(null)
