@@ -6,6 +6,9 @@
   "bin": {
     "sheetsee": "bin.js"
   },
+  "scripts": {
+    "test": "standard"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jlord/sheetsee.git"
@@ -31,5 +34,8 @@
     "sheetsee-maps": "~0.0.0",
     "sheetsee-charts": "~0.0.0",
     "sheetsee-core": "~0.0.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
   }
 }
