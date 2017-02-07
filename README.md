@@ -1,6 +1,10 @@
-A module for building Sheetsee.js
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-# Right-sizing
+
+
+# Sheetsee
+
+** A Node.js command line tool for creating a custom build of the [sheetsee.js](http://jlord.github.io/sheetsee.js) library with just the components you want.** :sparkles:
 
 You can customize your sheetsee.js build with just the parts you want to use. If you want to just use the full version, you can grab it here at [github.com/jlord/sheetsee.js](https://github.com/jlord/sheetsee.js/blob/master/js/sheetsee.js).
 
