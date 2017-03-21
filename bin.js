@@ -35,8 +35,8 @@ function includeModules (npmModules, writeFile) {
   var counter = npmModules.length
   npmModules.forEach(function addModules (module) {
     counter--
-    if (counter !== 0) extendString = extendString + "require('' + module + ''), "
-    if (counter === 0) extendString = extendString + "require('' + module + '')); module.exports = Sheetsee;"
+    if (counter !== 0) extendString = extendString + "require('" + module + "'), "
+    if (counter === 0) extendString = extendString + "require('" + module + "')); module.exports = Sheetsee;"
   })
   runBuild(extendString, writeFile)
 }
