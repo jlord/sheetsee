@@ -15,16 +15,15 @@ function makeBuildInstructions (modules, cb) {
 function getWantedModules (modules, cb) {
   var npmModules = []
   var writeFile = false
-  if (modules === '') console.log('Please include modules -maps/-m, -tables/-t or -charts/-c')
+  if (modules === '') console.log('Please include modules -maps/-m or -tables/-t')
   modules.forEach(function whichModules (module) {
     if (module === '-m' || module === '-maps') return npmModules.push('sheetsee-maps')
     if (module === '-t' || module === '-tables') return npmModules.push('sheetsee-tables')
-    if (module === '-c' || module === '-charts') return npmModules.push('sheetsee-charts')
     if (module === '--save') {
       writeFile = true
       return
     }
-    console.error(module + ' does not exist, please use -maps/-m, -tables/-t or -charts/-c')
+    console.error(module + ' does not exist, please use -maps/-m or -tables/-t')
   })
   cb(npmModules, writeFile)
 }
@@ -36,8 +35,8 @@ function includeModules (npmModules, writeFile) {
   var counter = npmModules.length
   npmModules.forEach(function addModules (module) {
     counter--
-    if (counter !== 0) extendString = extendString + "require('' + module + ''), "
-    if (counter === 0) extendString = extendString + "require('' + module + '')); module.exports = Sheetsee;"
+    if (counter !== 0) extendString = extendString + "require('" + module + "'), "
+    if (counter === 0) extendString = extendString + "require('" + module + "')); module.exports = Sheetsee;"
   })
   runBuild(extendString, writeFile)
 }
