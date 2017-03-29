@@ -16,7 +16,7 @@
   "author": {
     "name": "Jessica Lord"
   },
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/jlord/sheetsee/issues"
   },
@@ -28,9 +28,9 @@
   "dependencies": {
     "browserify": "^2.35.4",
     "lodash.assign": "^2.1.0",
-    "sheetsee-core": "~0.0.0",
-    "sheetsee-maps": "~0.0.0",
-    "sheetsee-tables": "~0.0.0",
+    "sheetsee-core": "^0.1.1",
+    "sheetsee-maps": "^1.0.0",
+    "sheetsee-tables": "^0.2.0",
     "through": "^2.3.8"
   },
   "devDependencies": {
